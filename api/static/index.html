@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FallDetection - Demo Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="back-btn">&#8592;</div>
+            <div class="title">FallDetection <span class="status-dot"></span></div>
+            <div class="icons">
+                <span class="icon wrench">🔧</span>
+                <span class="icon bell">🔔</span>
+                <span class="icon info">ℹ️</span>
+            </div>
+        </header>
+
+        <!-- Terminal V1 -->
+        <div class="widget terminal-widget" id="v1-terminal">
+            <div class="terminal-content" id="terminal-content">
+                ✅ HỆ THỐNG AN TOÀN<br>Không có báo động ngã.
+            </div>
+        </div>
+
+        <!-- Image Gallery V7 -->
+        <div class="widget image-widget" id="v7-image">
+            <img id="evidence-img" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Evidence Image">
+            <div class="placeholder-text" id="img-placeholder">Image</div>
+        </div>
+
+        <!-- Buttons Row 1 -->
+        <div class="button-row">
+            <div class="btn-container">
+                <label>Confirm Your Status</label>
+                <button class="blynk-btn green" id="btn-v0" onmousedown="pushPin('V0', 1)" onmouseup="pushPin('V0', 0)">I'm Fine</button>
+            </div>
+            <div class="btn-container">
+                <label>Family Safety Confirmation</label>
+                <button class="blynk-btn green" id="btn-v11" onmousedown="pushPin('V11', 1)" onmouseup="pushPin('V11', 0)">Safe</button>
+            </div>
+        </div>
+
+        <!-- Button Row 2 -->
+        <div class="btn-container full-width">
+            <label>Call SOS to Family</label>
+            <button class="blynk-btn green" id="btn-v12" onmousedown="pushPin('V12', 1)" onmouseup="pushPin('V12', 0)">Call SOS</button>
+        </div>
+
+        <!-- Slider V5 -->
+        <div class="slider-container">
+            <div class="slider-labels">
+                <label id="slider-val">0</label>
+                <label class="center-label">Do Not Disturb</label>
+                <label></label>
+            </div>
+            <input type="range" min="0" max="60" value="0" class="blynk-slider" id="slider-v5" onchange="syncSlider(this.value)">
+        </div>
+
+        <!-- Reset Button V6 -->
+        <div class="btn-container full-width bottom-reset">
+            <button class="blynk-btn cyan" id="btn-v6" onmousedown="pushPin('V6', 1)" onmouseup="pushPin('V6', 0)">Reset</button>
+        </div>
+        
+        <!-- MOCK FALL (Hidden Demo Tool) -->
+        <button class="mock-btn" id="btn-mock" onclick="triggerMockFall()">Demo: Ngã giả lập</button>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>

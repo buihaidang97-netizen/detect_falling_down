@@ -1,0 +1,25 @@
+.venv/
+.venv_gpu/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Models and Data
+Models/
+Data/
+*.mp4
+*.avi
+*.gif
+
+# System/IDE
+.DS_Store
+Thumbs.db
+.gemini/
+.agents/
+.vscode/
+.idea/
+evidence/
+api/storage/
+.pio/
+firmware/.cache/
+firmware/include/Config.h
